@@ -8,73 +8,156 @@
 <style>
 body {
     margin:0;
-    font-family: Arial;
-    background:#050816;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at top, #0a0f1f, #000);
     color:white;
 }
 
-/* BOTONES */
-.btn {
-    background:red;
-    border:none;
-    padding:10px 15px;
-    color:white;
-    border-radius:8px;
-    cursor:pointer;
-}
-
-.btn:hover {
-    box-shadow:0 0 10px red;
+/* GRID FONDO */
+body::before {
+    content:"";
+    position:fixed;
+    width:100%;
+    height:100%;
+    background: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size:40px 40px;
+    z-index:-1;
 }
 
 /* HEADER */
 header {
     display:flex;
     justify-content:space-between;
-    padding:20px;
+    padding:20px 40px;
 }
 
+.btn {
+    background:#ff003c;
+    border:none;
+    padding:10px 18px;
+    border-radius:10px;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover {
+    box-shadow:0 0 20px #ff003c;
+}
+
+/* LAYOUT */
 .container {
     display:flex;
 }
 
-.main { width:70%; }
-.sidebar { width:30%; padding:20px; }
+/* MAIN */
+.main {
+    width:70%;
+    padding:30px;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width:30%;
+    padding:30px;
+}
+
+/* BONUS */
+.bonus {
+    background: linear-gradient(90deg,#4b0000,#1a1f4d);
+    padding:20px;
+    border-radius:15px;
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:30px;
+}
+
+/* HERO */
+.hero {
+    text-align:center;
+    margin:60px 0;
+}
+
+.hero h1 {
+    font-size:50px;
+}
 
 /* CARDS */
 .carousel {
     display:flex;
-    gap:15px;
+    gap:20px;
     overflow-x:auto;
-    padding:20px;
 }
 
 .card {
-    min-width:200px;
+    min-width:240px;
+    border-radius:15px;
+    overflow:hidden;
     background:#0c142b;
-    padding:20px;
-    border-radius:10px;
+    transition:0.3s;
 }
 
-/* PANEL */
+.card:hover {
+    transform:translateY(-5px);
+    box-shadow:0 0 20px #ff003c;
+}
+
+.card-top {
+    height:120px;
+}
+
+/* GRADIENTES */
+.slots {background:linear-gradient(45deg,purple,pink);}
+.ruleta {background:linear-gradient(45deg,red,orange);}
+.poker {background:linear-gradient(45deg,blue,cyan);}
+.blackjack {background:linear-gradient(45deg,green,teal);}
+
+.card-content {
+    padding:15px;
+}
+
+/* SIDEBAR PANEL */
 .panel {
     background:#0c142b;
     padding:20px;
-    border-radius:10px;
+    border-radius:15px;
+    margin-bottom:20px;
+}
+
+.profile {
+    text-align:center;
+}
+
+.profile img {
+    width:80px;
+    border-radius:50%;
+    border:2px solid #ff003c;
 }
 
 .progress {
-    height:6px;
-    background:#333;
+    height:8px;
+    background:#222;
     border-radius:10px;
+    margin:10px 0;
 }
 
 .bar {
     height:100%;
     width:65%;
-    background:orange;
+    background:linear-gradient(gold,orange);
 }
 
+.balance {
+    font-size:24px;
+    color:#4da6ff;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .container {flex-direction:column;}
+    .main, .sidebar {width:100%;}
+}
 </style>
 
 </head>
@@ -93,23 +176,47 @@ header {
 
 <div class="main">
 
-<h1 style="text-align:center;">Bienvenido a APOLO</h1>
+<div class="bonus">
+    <div>
+        <h3>Bono de Bienvenida</h3>
+        <p>Duplica tu primer depósito hasta $100,000 COP</p>
+    </div>
+    <button class="btn">Reclamar</button>
+</div>
+
+<section class="hero">
+    <h1>Bienvenido a APOLO</h1>
+    <p>La experiencia de casino más futurista del universo</p>
+</section>
+
+<h2>Categorías de Juegos</h2>
 
 <div class="carousel">
 
 <div class="card">
+<div class="card-top slots"></div>
+<div class="card-content">
 <h3>Slots</h3>
+<p>Máquinas espaciales</p>
 <button class="btn">Jugar</button>
+</div>
 </div>
 
 <div class="card">
+<div class="card-top ruleta"></div>
+<div class="card-content">
 <h3>Ruleta</h3>
+<p>Clásica</p>
 <button class="btn">Jugar</button>
+</div>
 </div>
 
 <div class="card">
+<div class="card-top poker"></div>
+<div class="card-content">
 <h3>Poker</h3>
 <button class="btn">Jugar</button>
+</div>
 </div>
 
 </div>
@@ -118,17 +225,18 @@ header {
 
 <div class="sidebar">
 
-<div class="panel">
+<div class="panel profile">
 <h3>Perfil</h3>
+<img src="https://i.pravatar.cc/150">
 <p>Nivel: Bronce</p>
 
 <div class="progress">
 <div class="bar"></div>
 </div>
 
-<h2>$50,000</h2>
-<button class="btn">Depositar</button>
+<div class="balance">$50,000 COP</div>
 
+<button class="btn">Mi Billetera</button>
 </div>
 
 </div>
