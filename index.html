@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APOLO Casino</title>
+
+<style>
+body {
+    margin:0;
+    font-family: Arial;
+    background:#050816;
+    color:white;
+}
+
+/* BOTONES */
+.btn {
+    background:red;
+    border:none;
+    padding:10px 15px;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.btn:hover {
+    box-shadow:0 0 10px red;
+}
+
+/* HEADER */
+header {
+    display:flex;
+    justify-content:space-between;
+    padding:20px;
+}
+
+.container {
+    display:flex;
+}
+
+.main { width:70%; }
+.sidebar { width:30%; padding:20px; }
+
+/* CARDS */
+.carousel {
+    display:flex;
+    gap:15px;
+    overflow-x:auto;
+    padding:20px;
+}
+
+.card {
+    min-width:200px;
+    background:#0c142b;
+    padding:20px;
+    border-radius:10px;
+}
+
+/* PANEL */
+.panel {
+    background:#0c142b;
+    padding:20px;
+    border-radius:10px;
+}
+
+.progress {
+    height:6px;
+    background:#333;
+    border-radius:10px;
+}
+
+.bar {
+    height:100%;
+    width:65%;
+    background:orange;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h2>APOLO</h2>
+    <div>
+        <button class="btn">Ingresar</button>
+        <button class="btn">Registrarse</button>
+    </div>
+</header>
+
+<div class="container">
+
+<div class="main">
+
+<h1 style="text-align:center;">Bienvenido a APOLO</h1>
+
+<div class="carousel">
+
+<div class="card">
+<h3>Slots</h3>
+<button class="btn">Jugar</button>
+</div>
+
+<div class="card">
+<h3>Ruleta</h3>
+<button class="btn">Jugar</button>
+</div>
+
+<div class="card">
+<h3>Poker</h3>
+<button class="btn">Jugar</button>
+</div>
+
+</div>
+
+</div>
+
+<div class="sidebar">
+
+<div class="panel">
+<h3>Perfil</h3>
+<p>Nivel: Bronce</p>
+
+<div class="progress">
+<div class="bar"></div>
+</div>
+
+<h2>$50,000</h2>
+<button class="btn">Depositar</button>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
