@@ -6,157 +6,217 @@
 <title>APOLO Casino</title>
 
 <style>
-body {
-    margin:0;
-    font-family: 'Segoe UI', sans-serif;
-    background: radial-gradient(circle at top, #0a0f1f, #000);
-    color:white;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
 }
 
-/* GRID FONDO */
-body::before {
-    content:"";
-    position:fixed;
-    width:100%;
-    height:100%;
-    background: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-    background-size:40px 40px;
-    z-index:-1;
+body{
+background:#050816;
+color:white;
+}
+
+/* FONDO GRID */
+body::before{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background:
+linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+background-size:40px 40px;
+z-index:-1;
 }
 
 /* HEADER */
-header {
-    display:flex;
-    justify-content:space-between;
-    padding:20px 40px;
+header{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:20px 40px;
 }
 
-.btn {
-    background:#ff003c;
-    border:none;
-    padding:10px 18px;
-    border-radius:10px;
-    color:white;
-    cursor:pointer;
-    transition:0.3s;
+.logo{
+font-size:22px;
+font-weight:bold;
 }
 
-.btn:hover {
-    box-shadow:0 0 20px #ff003c;
+.search{
+width:40%;
+}
+
+.search input{
+width:100%;
+padding:12px;
+border-radius:12px;
+border:none;
+background:#0c142b;
+color:white;
+}
+
+/* BOTONES */
+.btn{
+background:#ff003c;
+border:none;
+padding:10px 20px;
+border-radius:10px;
+color:white;
+cursor:pointer;
+transition:0.3s;
+}
+
+.btn:hover{
+box-shadow:0 0 20px #ff003c;
 }
 
 /* LAYOUT */
-.container {
-    display:flex;
+.container{
+display:flex;
 }
 
 /* MAIN */
-.main {
-    width:70%;
-    padding:30px;
+.main{
+width:75%;
+padding:30px;
 }
 
 /* SIDEBAR */
-.sidebar {
-    width:30%;
-    padding:30px;
+.sidebar{
+width:25%;
+padding:30px;
 }
 
 /* BONUS */
-.bonus {
-    background: linear-gradient(90deg,#4b0000,#1a1f4d);
-    padding:20px;
-    border-radius:15px;
-    display:flex;
-    justify-content:space-between;
-    margin-bottom:30px;
+.bonus{
+background:linear-gradient(90deg,#6b0000,#1a1f4d);
+padding:20px;
+border-radius:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:40px;
 }
 
 /* HERO */
-.hero {
-    text-align:center;
-    margin:60px 0;
+.hero{
+text-align:center;
+margin:60px 0;
 }
 
-.hero h1 {
-    font-size:50px;
+.hero h1{
+font-size:60px;
+}
+
+.hero p{
+color:#aaa;
+}
+
+/* TITULO */
+.section-title{
+margin:40px 0 20px;
+border-left:4px solid red;
+padding-left:10px;
 }
 
 /* CARDS */
-.carousel {
-    display:flex;
-    gap:20px;
-    overflow-x:auto;
+.cards{
+display:flex;
+gap:20px;
+overflow-x:auto;
+padding-bottom:10px;
 }
 
-.card {
-    min-width:240px;
-    border-radius:15px;
-    overflow:hidden;
-    background:#0c142b;
-    transition:0.3s;
+.card{
+min-width:260px;
+background:#0c142b;
+border-radius:15px;
+overflow:hidden;
+transition:0.3s;
 }
 
-.card:hover {
-    transform:translateY(-5px);
-    box-shadow:0 0 20px #ff003c;
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 0 20px rgba(255,0,60,0.5);
 }
 
-.card-top {
-    height:120px;
+.card-top{
+height:140px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:40px;
 }
 
-/* GRADIENTES */
-.slots {background:linear-gradient(45deg,purple,pink);}
-.ruleta {background:linear-gradient(45deg,red,orange);}
-.poker {background:linear-gradient(45deg,blue,cyan);}
-.blackjack {background:linear-gradient(45deg,green,teal);}
+/* COLORES */
+.slots{background:linear-gradient(45deg,purple,pink);}
+.ruleta{background:linear-gradient(45deg,red,orange);}
+.poker{background:linear-gradient(45deg,blue,cyan);}
+.blackjack{background:linear-gradient(45deg,green,teal);}
 
-.card-content {
-    padding:15px;
+.card-content{
+padding:20px;
+}
+
+.card-content p{
+color:#aaa;
+font-size:14px;
+margin-bottom:10px;
 }
 
 /* SIDEBAR PANEL */
-.panel {
-    background:#0c142b;
-    padding:20px;
-    border-radius:15px;
-    margin-bottom:20px;
+.panel{
+background:#0c142b;
+padding:20px;
+border-radius:15px;
+margin-bottom:20px;
 }
 
-.profile {
-    text-align:center;
+.profile{
+text-align:center;
 }
 
-.profile img {
-    width:80px;
-    border-radius:50%;
-    border:2px solid #ff003c;
+.profile img{
+width:90px;
+border-radius:50%;
+border:3px solid #ff003c;
+margin-bottom:10px;
 }
 
-.progress {
-    height:8px;
-    background:#222;
-    border-radius:10px;
-    margin:10px 0;
+.progress{
+height:8px;
+background:#222;
+border-radius:10px;
+margin:10px 0;
 }
 
-.bar {
-    height:100%;
-    width:65%;
-    background:linear-gradient(gold,orange);
+.bar{
+height:100%;
+width:65%;
+background:linear-gradient(gold,orange);
 }
 
-.balance {
-    font-size:24px;
-    color:#4da6ff;
+.balance{
+font-size:26px;
+color:#4da6ff;
+margin:10px 0;
+}
+
+/* GANADORES */
+.winners p{
+font-size:14px;
+color:#aaa;
+margin:5px 0;
 }
 
 /* RESPONSIVE */
 @media(max-width:900px){
-    .container {flex-direction:column;}
-    .main, .sidebar {width:100%;}
+.container{flex-direction:column;}
+.main,.sidebar{width:100%;}
+.search{display:none;}
+.hero h1{font-size:40px;}
 }
 </style>
 
@@ -165,57 +225,73 @@ header {
 <body>
 
 <header>
-    <h2>APOLO</h2>
-    <div>
-        <button class="btn">Ingresar</button>
-        <button class="btn">Registrarse</button>
-    </div>
+<div class="logo">APOLO</div>
+
+<div class="search">
+<input placeholder="Buscar Juegos...">
+</div>
+
+<div>
+<button class="btn">INGRESAR</button>
+<button class="btn">REGISTRARSE</button>
+</div>
 </header>
 
 <div class="container">
 
+<!-- MAIN -->
 <div class="main">
 
 <div class="bonus">
-    <div>
-        <h3>Bono de Bienvenida</h3>
-        <p>Duplica tu primer depósito hasta $100,000 COP</p>
-    </div>
-    <button class="btn">Reclamar</button>
+<div>
+<h3>Bono de Bienvenida</h3>
+<p>Duplica tu primer depósito hasta $100,000 COP</p>
+</div>
+<button class="btn">RECLAMAR AHORA</button>
 </div>
 
-<section class="hero">
-    <h1>Bienvenido a APOLO</h1>
-    <p>La experiencia de casino más futurista del universo</p>
-</section>
+<div class="hero">
+<h1>Bienvenido a APOLO</h1>
+<p>La experiencia de casino más futurística del universo</p>
+</div>
 
-<h2>Categorías de Juegos</h2>
+<h2 class="section-title">CATEGORÍAS DE JUEGOS</h2>
 
-<div class="carousel">
+<div class="cards">
 
 <div class="card">
-<div class="card-top slots"></div>
+<div class="card-top slots">★</div>
 <div class="card-content">
-<h3>Slots</h3>
+<h3>SLOTS</h3>
 <p>Máquinas espaciales</p>
-<button class="btn">Jugar</button>
+<button class="btn">JUGAR AHORA</button>
 </div>
 </div>
 
 <div class="card">
-<div class="card-top ruleta"></div>
+<div class="card-top ruleta">●</div>
 <div class="card-content">
-<h3>Ruleta</h3>
-<p>Clásica</p>
-<button class="btn">Jugar</button>
+<h3>RULETA</h3>
+<p>Ruleta clásica</p>
+<button class="btn">JUGAR AHORA</button>
 </div>
 </div>
 
 <div class="card">
-<div class="card-top poker"></div>
+<div class="card-top poker">♠</div>
 <div class="card-content">
-<h3>Poker</h3>
-<button class="btn">Jugar</button>
+<h3>POKER</h3>
+<p>Texas Hold'em</p>
+<button class="btn">JUGAR AHORA</button>
+</div>
+</div>
+
+<div class="card">
+<div class="card-top blackjack">21</div>
+<div class="card-content">
+<h3>BLACKJACK</h3>
+<p>Veintiuno</p>
+<button class="btn">JUGAR AHORA</button>
 </div>
 </div>
 
@@ -223,10 +299,11 @@ header {
 
 </div>
 
+<!-- SIDEBAR -->
 <div class="sidebar">
 
 <div class="panel profile">
-<h3>Perfil</h3>
+<h3>PERFIL Y AJUSTES</h3>
 <img src="https://i.pravatar.cc/150">
 <p>Nivel: Bronce</p>
 
@@ -234,9 +311,18 @@ header {
 <div class="bar"></div>
 </div>
 
+<small>Próximo nivel: Plata</small>
+
 <div class="balance">$50,000 COP</div>
 
-<button class="btn">Mi Billetera</button>
+<button class="btn">MI BILLETERA</button>
+</div>
+
+<div class="panel winners">
+<h3>GANADORES EN TIEMPO REAL</h3>
+<p>Jugador123 ganó $500,000</p>
+<p>CasinoPro ganó $1,200,000</p>
+<p>LuckyWin ganó $300,000</p>
 </div>
 
 </div>
